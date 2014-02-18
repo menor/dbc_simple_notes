@@ -30,7 +30,7 @@ README.md            sinatra-skeleton-mvc
 
 Remove the `.git` directory from `sinatra-skeleton-mvc` with `rm -rf .git/`
 
-Add the `sinatra_skeleton_mvc` directory to the project with `git add .` then
+Add the `sinatra-skeleton-mvc` directory to the project with `git add .` then
 commit with `git commit -m "Adds Sinatra Skeleton."`
 
 ###Release 0 : RESTful CRUD
