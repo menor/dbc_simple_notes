@@ -13,9 +13,25 @@ the database and all
 [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) routes and
 views.
 
-You can start from the included skeleton in the `p1_crud` directory.
-
 ##Releases
+
+## Skeleton
+
+Clone the [Sinatra Skeleton](../../../sinatra-skeleton-mvc) into the current
+directory with: `git clone SINATRA_SKELETON_URI`
+
+Check reality by running `ls`, you should see:
+
+```
+README.md            sinatra-skeleton-mvc
+```
+
+`cd` into the `sinatra-skeleton-mvc` directory.
+
+Remove the `.git` directory from `sinatra-skeleton-mvc` with `rm -rf .git/`
+
+Add the `sinatra_skeleton_mvc` directory to the project with `git add .` then
+commit with `git commit -m "Adds Sinatra Skeleton."`
 
 ###Release 0 : RESTful CRUD
 
