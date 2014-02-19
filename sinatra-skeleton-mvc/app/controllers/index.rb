@@ -3,16 +3,35 @@ get '/' do
   erb :index
 end
 
-get '/bands' do
-  @band_names = Band.all.map(&:name)
-  erb :bands
+
+get '/photos/new' do
+  # return an HTML form for creating a new note
 end
 
-post '/bands' do
-  new_band = Band.create!(name: params[:name])
-  new_band.name
+get '/notes' do
+  # display a list of all notes
 end
 
-get '/info' do
-  Demo.new(self).info
+patch 'notes/:id' do
+# update a specific note
 end
+
+delete 'notes/id' do
+  # delete a specific note
+  # needs confirmation
+end
+
+
+# get '/bands' do
+#   @band_names = Band.all.map(&:name)
+#   erb :bands
+# end
+
+# post '/bands' do
+#   new_band = Band.create!(name: params[:name])
+#   new_band.name
+# end
+
+# get '/info' do
+#   Demo.new(self).info
+# end
