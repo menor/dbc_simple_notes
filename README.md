@@ -50,7 +50,9 @@ operation.
 
 ### Release 1 : Add Partials
 
-Use Partials to convert your page to a single page application.
+Use Partials to display the new note entry form and the listing of all notes
+on the same page.  You may feel free to implement another view for editing
+a particular note.
 
 ### Release 2 : Add AJAX (optional)
 
