@@ -1,15 +1,28 @@
 get '/' do
-  # Look in app/views/index.erb
+  @notes = Note.all
   erb :index
 end
 
-
 get '/notes/new' do
-  
+  # return a form for creating a new note
 end
 
-get '/notes' do
-  # display a list of all notes
+get 'notes/:id/edit' do
+  # return a form for updating a note
+end
+
+get 'notes/:id' do
+  # display a specific note
+end
+
+get '/notes/' do
+  @notes = Note.all
+  erb :list_notes
+end
+
+post '/notes' do
+  Note.create(content: params[:content])
+  redirect '/'
 end
 
 patch 'notes/:id' do
