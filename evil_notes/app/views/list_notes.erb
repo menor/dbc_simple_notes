@@ -1,5 +1,8 @@
 <ul>
   <% @notes.each do |note| %>
-    <li> <%= note.content %> </li>
+    <li>
+      <span><%= note.title %></span> 
+      <span><%= note.content %></span>
+    </li>
   <% end %>
 </ul>

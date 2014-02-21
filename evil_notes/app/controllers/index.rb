@@ -1,5 +1,5 @@
 get '/' do
-  @notes = Note.all
+  @notes = Note.order("created_at DESC")
   erb :index
 end
 
@@ -7,11 +7,12 @@ get '/notes/new' do
   # return a form for creating a new note
 end
 
-get 'notes/:id/edit' do
-  # return a form for updating a note
+get '/notes/:id/edit' do
+  @note = Note.find(params[:id])
+  erb :update_note_form
 end
 
-get 'notes/:id' do
+get '/notes/:id' do
   # display a specific note
 end
 
@@ -21,30 +22,15 @@ get '/notes/' do
 end
 
 post '/notes' do
-  Note.create(content: params[:content])
+  Note.create(title: params[:title], content: params[:content])
   redirect '/'
 end
 
-patch 'notes/:id' do
+patch '/notes/:id' do
 # update a specific note
 end
 
-delete 'notes/id' do
+delete '/notes/id' do
   # delete a specific note
   # needs confirmation
 end
-
-
-# get '/bands' do
-#   @band_names = Band.all.map(&:name)
-#   erb :bands
-# end
-
-# post '/bands' do
-#   new_band = Band.create!(name: params[:name])
-#   new_band.name
-# end
-
-# get '/info' do
-#   Demo.new(self).info
-# end
