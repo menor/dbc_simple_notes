@@ -4,7 +4,7 @@ get '/' do
 end
 
 
-get '/photos/new' do
+get '/notes/new' do
   
 end
 
