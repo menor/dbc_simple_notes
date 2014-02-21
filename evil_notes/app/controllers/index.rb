@@ -5,7 +5,7 @@ end
 
 
 get '/photos/new' do
-  # return an HTML form for creating a new note
+  
 end
 
 get '/notes' do
