@@ -8,9 +8,10 @@ describe "IndexController" do
   end
 
   describe 'create a new note' do
-    new_note = 'Conquer Andorra'
+    new_note = {title: 'Conquer Andorra', content:'Andorra must be destroyed'}
     new_params = {
-      note: new_note
+      title: new_note[:title],
+      content: new_note[:content]
     }
 
     it 'should add a new note' do

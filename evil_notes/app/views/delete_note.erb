@@ -1,0 +1,10 @@
+<% if @note %>
+  <p>Are you sure you want to delete <em>"<%= @note.title %>"</em>?</p>
+  <form action="/notes/<%= @note.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Do it!">
+    <a href="/<%= @note.id %>">Not yet</a>
+  </form>
+<% else %>
+  <p>Note not found.</p>
+<% end %>

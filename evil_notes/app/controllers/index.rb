@@ -12,8 +12,16 @@ get '/notes/:id/edit' do
   erb :update_note_form
 end
 
+get '/notes/:id/delete' do
+  @note = Note.find(params[:id])
+  erb :delete_note
+end
+
 get '/notes/:id' do
-  # display a specific note
+  @note = Note.find(params[:id])
+  erb :single_note
+  # Haven't been able to redirect if active record doesn't
+  # find a record with that id
 end
 
 get '/notes/' do
@@ -26,11 +34,17 @@ post '/notes' do
   redirect '/'
 end
 
-patch '/notes/:id' do
-# update a specific note
+put '/notes/:id' do
+  note = Note.find params[:id]
+  note.title = params[:title]
+  note.content = params[:content]
+  note.updated_at = Time.now
+  note.save
+  redirect '/'
 end
 
-delete '/notes/id' do
-  # delete a specific note
-  # needs confirmation
+delete '/notes/:id' do
+  note = Note.find params[:id]
+  note.destroy
+  redirect '/'
 end
