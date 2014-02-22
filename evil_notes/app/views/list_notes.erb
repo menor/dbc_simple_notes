@@ -1,8 +1,9 @@
-<ul>
+<ul class="list_notes">
+  <h2>Notes on your plate</h2>
   <% @notes.each do |note| %>
     <li>
       <a href="/notes/<%= note.id %>"><span><%= note.title %></span></a>
-      <span><%= note.content %></span>
+      <span class='hidden'><%= note.content %></span>
     </li>
   <% end %>
 </ul>

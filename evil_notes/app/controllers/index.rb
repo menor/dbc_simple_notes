@@ -5,6 +5,7 @@ end
 
 get '/notes/new' do
   # return a form for creating a new note
+  # Not implemented, I prefer the partial on the main page
 end
 
 get '/notes/:id/edit' do

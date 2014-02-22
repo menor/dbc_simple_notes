@@ -6,10 +6,8 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,6 +16,9 @@
   <title>Notedrome - Note taking for the 22th Century</title>
 </head>
 <body>
-  <%= yield %>
+  <div class="container">
+    <h1 class="logo">Notedrome</h1>
+    <%= yield %>
+  </div>
 </body>
 </html>
