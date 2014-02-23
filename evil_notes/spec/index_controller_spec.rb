@@ -18,9 +18,22 @@ describe "IndexController" do
       expect{
         post('/notes', new_params)
       }.to change(Note, :count).by(1)
-      last_response.should be_ok
-      last_response.body.should == new_note
     end
+
+    describe 'delete a note' do
+    new_note = {title: 'Conquer Andorra', content:'Andorra must be destroyed'}
+    new_params = {
+      title: new_note[:title],
+      content: new_note[:content]
+    }
+
+    it 'should delete a note' do
+      expect{
+        delete('/notes/1')
+      }.to change(Note, :count).by(-1)
+    end
+  end
+
   end
 
 

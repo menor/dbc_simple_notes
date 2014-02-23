@@ -1,8 +1,12 @@
 body {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
-    background: #DDD;
+    background: #FDFCDC;
     color: #333;
+}
+
+p {
+    font-size: 1.4em;
 }
 
 .container {
@@ -76,4 +80,17 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #B10DC9;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.edit, .delete {
+    background-color: #D2B48C;
+    color: #FCFCFC;
+    padding: .5em;
+    margin: 1em 1em 0 1em;
+    float: right;
 }
