@@ -1,6 +1,6 @@
-class Note < ActiveRecord::Migration
+class CreateTodos < ActiveRecord::Migration
   def change
-    create_table(:notes) do |t|
+    create_table(:todos) do |t|
       t.string :title, null: false 
       t.string :content, null: false
     end
