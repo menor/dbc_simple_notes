@@ -11,6 +11,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'shoulda-matchers'
 require 'rack/test'
 require 'factory_girl'
+require 'database_cleaner'
 
 FactoryGirl.definition_file_paths = %w{./factories ./test/factories ./spec/factories}
 FactoryGirl.find_definitions
@@ -20,9 +21,22 @@ RSpec.configure do |config|
 end
 
 RSpec.configure do |config|
+  
+  config.before :suite do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
+
   config.include FactoryGirl::Syntax::Methods
+
 end
 
 def app
   Sinatra::Application
 end
+
+

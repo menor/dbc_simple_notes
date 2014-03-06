@@ -7,7 +7,7 @@ describe Todo do
   its(:content) { should == 'Andorra is the key to invade France' }
 
   context 'a duplicate title' do
-    it { should_not_be_valid }
+    it { should_not be_valid }
   end
 
   
