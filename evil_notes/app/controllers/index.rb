@@ -3,6 +3,11 @@ get '/' do
   erb :index
 end
 
+get '/todos/:id/edit' do
+  @todo = Todo.find(params[:id])
+  erb :update_form
+end
+
 get '/todos' do
   @todos = Todo.all
   erb :todos
@@ -13,6 +18,10 @@ post '/todos' do
   redirect '/todos'
 end
 
-get '/info' do
-  Demo.new(self).info
+put '/todos/:id' do
+  todo = Todo.find(params[:id])
+  todo.title = params[:title]
+  todo.content = params[:content]
+  todo.save
+  redirect '/'
 end

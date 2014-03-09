@@ -3,6 +3,8 @@ class CreateTodos  < ActiveRecord::Migration
     create_table(:todos) do |t|
       t.string :title, null: false
       t.string :content, null: false
+
+      t.timestamps
     end
   end
 end

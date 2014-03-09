@@ -36,7 +36,7 @@ describe "IndexController" do
       }
       it 'should change a note title' do
       expect{
-        put('/todos/1/edit', new_params )
+        put('/todos/1', new_params )
       }.to change(Todo.find(1), :title).to include('Gems')
     end
   end
