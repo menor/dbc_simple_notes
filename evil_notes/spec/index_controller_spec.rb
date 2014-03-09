@@ -1,30 +1,44 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe "IndexController (this is a skeleton controller test!)" do
+describe "IndexController" do
 
-#   describe 'get all bands' do
-#     it 'should see all bands' do
-#       get "/bands"
-#       expect(last_response).to be_ok
-#     end
-#   end
+  before(:each) do 
+    FactoryGirl.create(:todo)
+  end
 
-#   describe 'create a new band' do
-#     band_name = 'chromatics'
-#     new_params = {
-#         name: band_name
-#       }
-#     new_session = {
-#       'rack.session' => {
-#         # Could preload stuff into the session here...
-#       }
-#     }
-#     it 'should add a new band' do
-#       expect{
-#         post('/bands', new_params, new_session)
-#       }.to change(Band, :count).by(1)
-#       last_response.should be_ok
-#       last_response.body.should == band_name
-#     end
-#   end
-# end
+  describe 'get all todos' do
+    it 'should see all todos' do
+      get "/todos"
+      expect(last_response).to be_ok
+    end
+  end
+
+  describe 'create a new todo' do
+    title = 'Kick out the Jams'
+    content = 'Mother...'
+    new_params = {
+        title: title,
+        content: content
+      }
+    it 'should add a new todo' do
+      expect{
+        post('/todos', new_params, )
+      }.to change(Todo, :count).by(1)
+    end
+  end
+
+  describe 'update a note' do
+      title = 'Kick out the Gems'
+      content = 'Mother...'
+      new_params = {
+        title: title,
+        content: content
+      }
+      it 'should change a note title' do
+      expect{
+        put('/todos/1/edit', new_params )
+      }.to change(Todo.find(1), :title).to include('Gems')
+    end
+  end
+
+end

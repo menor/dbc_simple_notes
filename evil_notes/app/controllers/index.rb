@@ -3,14 +3,14 @@ get '/' do
   erb :index
 end
 
-get '/bands' do
-  @band_names = Band.all.map(&:name)
-  erb :bands
+get '/todos' do
+  @todos = Todo.all
+  erb :todos
 end
 
-post '/bands' do
-  new_band = Band.create!(name: params[:name])
-  new_band.name
+post '/todos' do
+  Todo.create(params)
+  redirect '/todos'
 end
 
 get '/info' do
