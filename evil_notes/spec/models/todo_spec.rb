@@ -5,13 +5,10 @@ describe Todo do
 
   its(:title) { should == 'Conquer Andorra' }
   its(:content) { should == 'Andorra is the key to invade France' }
-  its(:title) { validate_uniqueness_of(:title)  }
-
-  # context 'a duplicate title' do
-  #   first = FactoryGirl.create(:todo)
-  #   second = FactoryGirl.create(:todo)
-  #   expect{ second }.to_not be_valid
-  # end
+  it { should validate_uniqueness_of(:title)  }
+  it { should validate_presence_of(:title)  }
+  it { should validate_presence_of(:content)  }
+  
 
   
 end
