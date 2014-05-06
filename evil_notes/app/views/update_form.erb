@@ -1,0 +1,10 @@
+<% if @todo %>
+    <form action="/todos/<%= @todo.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      Title: <input type="text" name="title" value="<%= @todo.title %>"><br>
+      Content: <input type="text" name="content" value="<%= @todo.content %>"><br>
+      <input type="submit" value="Update">
+    </form>
+<% else %>
+    <p>Todo not found</p>
+<% end %>
